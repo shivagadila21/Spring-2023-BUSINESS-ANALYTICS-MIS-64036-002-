@@ -1,0 +1,57 @@
+---
+title: "Business Analytics - Assignment -1 "
+author: "shiva gadila"
+date: "2023-02-18"
+output:
+  word_document: default
+  html_document: default
+---
+```{r}
+#Question - 1 
+#Install the ISLR library using the command 
+#install.packages(ISLR)
+```
+
+```{r}
+#Question -2 
+#Calling the ISLR library, summary of carseats and finding the number of rows
+
+library(ISLR)
+summary(Carseats)
+
+nrow(Carseats)
+# The carseats dataset has 400 rows.
+```
+
+```{r}
+# Question -3 
+# Finding the maxminum value of Advertising attribute. 
+max(Carseats$Advertising)
+
+#Advertising attribute has 29 as its maxmimum value.
+```
+
+```{r}
+#Question - 4
+# Finding the IQR value of price attribute 
+IQR(Carseats$Price)
+
+#Price Attribute has 31 as its IQR value 
+```
+```{r}
+#Question - 5 
+#Ploting the Sales over price and finding the correlation.
+
+library(ggplot2)
+
+ggplot(Carseats)+
+  aes(
+    x=Sales,
+    y=Price
+  )+
+  geom_point(shape="circle", size = 1.2, colour="orange")+
+  theme_minimal()
+
+#Customers are more likely to purchase lower-priced car seats since there is no correlation between the number of units scored and the price of the seats.
+```
+
